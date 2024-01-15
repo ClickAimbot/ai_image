@@ -90,7 +90,7 @@
 }
 
 .ai-image-gen {
-  color: var(--main-1-c-274-c, #1C274C);
+  color: var(--main-1-c-274-c, #110A3F);
   font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-style: normal;
@@ -111,6 +111,15 @@
   color: var(--main-1-c-274-c, #1C274C);
   font-family: 'Inter', sans-serif;
   font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.navbar-text {
+  color: var(--main-1-c-274-c, #1C274C);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

@@ -10,7 +10,7 @@ export default function Sidebar() {
                             href={'/'}
                         >AI Image Generator</Link>
                     </div>
-                    <div className="my-4 mx-6 flex flex-col text-left">
+                    <div className="my-4 mx-6 flex flex-col flex-grow text-left">
                         <h3 className="sidebar-description">FEATURED APPLICATIONS</h3>
                             <Link 
                                 href={'/'} 
@@ -37,7 +37,7 @@ export default function Sidebar() {
                             >Data Extractor to JSON
                             </Link>
                     </div>
-                    <div className="mt-4 mx-6 mb-25 flex flex-col text-left">
+                    <div className="mt-4 mx-6 mb-6 flex flex-col text-left">
                         <p className="sidebar-description" >HOW TO</p>
                             <Link 
                                 href={'/'}
