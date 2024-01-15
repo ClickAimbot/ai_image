@@ -89,6 +89,24 @@
   line-height: normal;
 }
 
+.ai-image-gen {
+  color: var(--main-1-c-274-c, #1C274C);
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.ai-image-description {
+  color: var(--main-1-c-274-c, #1C274C);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 .web-chat-default-text {
   color: var(--main-1-c-274-c, #1C274C);
   font-family: 'Inter', sans-serif;

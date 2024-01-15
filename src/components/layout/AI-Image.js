@@ -4,14 +4,15 @@ import { useState } from "react";
 import Sidebar from "./Sidebar";
 
 export default function AI_Image() {
+    const defaultImage = "https://via.placeholder.com/600x400.png?text=AI+Generated+Image";
+
     const [inputText, setInputText] = useState('');
-    const [generatedImage, setGeneratedImage] = useState('');
+    const [generatedImage, setGeneratedImage] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
     const generateImage = async () => {
         setIsLoading(true);
     
-        // Replace these with your actual API key and endpoint values
         const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
         const apiEndpoint = process.env.NEXT_PUBLIC_OPENAI_ENDPOINT;
     
@@ -50,62 +51,62 @@ export default function AI_Image() {
     
 
     return (
-        <div className="flex" style={{height: 'calc(100vh - 100px)' }}>
+        <div className="flex w-full min-h-screen" style={{height: 'calc(100vh - 100px)' }}>
             <Sidebar />
-            <div className="flex flex-col mt-4 px-24 py-12">
-                <div className="flex flex-col flex-grow max-w-l">
-                    {generatedImage && (
-                        <p className="">{`Generated image is ${inputText}`}</p>
-                    )}
-                    {/* Display the generated image */}
-                    <img src={isLoading ? '' : generatedImage} className="mb-2" />
-                    <div className="flex justify-center">
-                        {/* Conditional rendering for download link */}
-                        {generatedImage && (
-                            <a
-                                href={generatedImage}
-                                download='generated_image.png' // You might want to give a more dynamic name
-                                className="border border-gray-300 py-2 px-12 mt-2 mb-2"
-                            >
-                                Download
-                            </a>
-                        )}
-                    </div>
-                </div>
-                <div className="flex p-2 ml-1">
-                    <div className="border rounded-full border-gray-300 flex-grow flex items-center px-4">
-                        <input
-                            className="w-full outline-none p-2"
-                            placeholder="Enter your message here..."
+            <div className="flex flex-col mt-6 px-28">
+                <h1 className='ai-image-gen mb-2 '>AI Image Generator</h1>
+                <div className="flex flex-col mr-20">
+                    <p className='ai-image-description mb-8'>Enter a text description and generate an AI Image</p>
+                    <form onSubmit={generateImage} className="border rounded-sm border-gray-300 flex-grow flex items-center px-4">
+                        <textarea
+                            rows='4'
+                            className="web-chat-default-text w-full outline-none resize-none p-2"
                             value={inputText}
                             onChange={(e) => setInputText(e.target.value)}
                         />
-                        <div className='icon-border-c'></div>
+                        <div className=''></div>
+                        {isLoading ? 'Generating...' : (
                             <button
-                                type="button"
-                                className="ml-2"
-                                onClick={() => generateImage()}
+                            type="button"
+                            className="clone-bot-btn"
+                            onClick={() => generateImage()}
                             >
-                            Send
+                            Generate
                             </button>
-                    </div>
+                        )}
+                    </form>
                 </div>
-                <div className="px-2 flex justify-between gap-2">
+                {generatedImage && ( // Check if generatedImage has a value
+                    <div className="flex flex-col flex-grow bg-white border rounded-sm border-gray-300 mt-6 mr-20">
+                        {/* Display the generated image */}
+                        <img src={generatedImage} alt="Generated" width={'600'} height={'400'} className="py-2 mt-4 px-24" />
+                        <div className="flex justify-center">
+                            {/* Download link */}
+                            <Link href={generatedImage} download='generated_image.png' className="border border-gray-300 py-2 px-12 mb-2">
+                                Download
+                            </Link>
+                        </div>
+                    </div>
+                )}
+                {generatedImage && (
+                    <p className="ai-image-description mt-2 mb-16">{`Generated image is a ${inputText}`}</p>
+                )}
+                <div className="flex justify-between gap-2 mt-2 items-center">
                     <Link 
-                        className="flex justify-center items-center description" 
+                        className="flex flex-grow description" 
                         href={'https://www.getbind.co/?utm_source=chat-app-bottom&utm_medium=chat-bot&utm_campaign=chat-bot'}
                     >
                         <span className='sidebar-how-text-hover'>Created with Bind</span>
                     </Link>
                     <div className='flex-1'></div>
-                    <div className='flex justify-between items-center description hidden sm:block disable-text'>
+                    <div className='flex description hidden sm:block disable-text'>
                         Bind can provide inaccurate information, including about people. Always double-check its answers. Your 
                     <span className='privacy mx-1 sidebar-how-text-hover'>privacy</span>
                         in Bind
                     </div>
                     <div className='block sm:hidden disable-text'>
                         Always check its answers. 
-                        <span className='privacy'>privacy</span>
+                        <Link href={'/'} className='privacy'>privacy</Link>
                         in Bind
                     </div>
                 </div>

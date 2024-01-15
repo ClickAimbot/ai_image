@@ -18,9 +18,6 @@ export default function Footer() {
                     <span className='sidebar-how-text-hover'>Powered by bind</span>
                 </Link>
             </div>
-            <div className=''>
-
-            </div>
         </div>
     )
 }
