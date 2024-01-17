@@ -64,7 +64,7 @@
   font-family: sans-serif;
   font-size: 14px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: normal;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -110,7 +110,7 @@
 .web-chat-default-text {
   color: var(--main-1-c-274-c, #1C274C);
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
