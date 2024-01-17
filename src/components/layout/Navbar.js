@@ -9,7 +9,7 @@ export default function Navbar() {
                     <img src="/logo-black.svg" />
                 </div>
                 <div className='icon-border my-2 mx-3'></div>
-                <div className='navbar-text'>AI Image Generator</div>
+                <div className='web-chat-default-text'>AI Image Generator</div>
                 <div className='flex-1'></div>
                 <div className='hidden sm:block'>
                     <Link 

@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from "react";
 import Sidebar from "./Sidebar";
@@ -51,7 +52,7 @@ export default function AI_Image() {
     
 
     return (
-        <div className="flex w-full min-h-screen" style={{height: 'calc(100vh - 100px)' }}>
+        <div className="flex w-full" style={{height: 'calc(100vh - 100px)' }}>
             <Sidebar />
             <div className="flex flex-col mt-6 px-28">
                 <h1 className='ai-image-gen mb-2 '>AI Image Generator</h1>
@@ -96,12 +97,15 @@ export default function AI_Image() {
                         className="flex flex-grow description" 
                         href={'https://www.getbind.co/?utm_source=chat-app-bottom&utm_medium=chat-bot&utm_campaign=chat-bot'}
                     >
-                        <span className='sidebar-how-text-hover'>Created with Bind</span>
+                        <span className='sidebar-how-text-hover px-1'>Created with </span>
+                        <Image src="/logo-black.svg" width={40} height={15} />
                     </Link>
                     <div className='flex-1'></div>
                     <div className='flex description hidden sm:block disable-text'>
                         Bind can provide inaccurate information, including about people. Always double-check its answers. Your 
-                    <span className='privacy mx-1 sidebar-how-text-hover'>privacy</span>
+                        <Link href={''}>
+                            <span className='privacy mx-1 sidebar-how-text-hover'>privacy</span>
+                        </Link>
                         in Bind
                     </div>
                     <div className='block sm:hidden disable-text'>

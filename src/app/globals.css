@@ -21,12 +21,12 @@
   background: #4529FA;
   box-shadow: 0px 2px 4px 0px rgba(28, 39, 76, 0.07);
   color: #FFF;
-  font-family: 'Inter', sans-serif;
+  font-family: sans-serif;
   font-size: 14px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: normal;
-  padding: 12px 16px;
+  padding: 12px 18px;
 }
 
 .icon-border {
@@ -51,7 +51,7 @@
 
 .link-hover:hover {
   border-radius: 4px;
-  background: rgba(52, 43, 111, 0.07);
+  background: #EFEDF6;
   padding: 13px 10px;
 }
 
@@ -61,7 +61,7 @@
 
 .sidebar-description {
   color: var(--main-54848-a-9-e, #848A9E);
-  font-family: 'Inter', sans-serif;
+  font-family: sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -72,7 +72,7 @@
 
 .sidebar-how-text {
   color: var(--main-1-c-274-c, #1C274C);
-  font-family: 'Inter' sans-serif;
+  font-family: sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -82,7 +82,7 @@
 .webbot-sidebar-item-default {
   padding: 13px 10px;
   color: var(--main-873-a-4363, #3A4363);
-  font-family: 'Inter', sans-serif;
+  font-family: sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -100,7 +100,7 @@
 
 .ai-image-description {
   color: var(--main-1-c-274-c, #1C274C);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter, JB mono', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -109,21 +109,12 @@
 
 .web-chat-default-text {
   color: var(--main-1-c-274-c, #1C274C);
-  font-family: 'Inter', sans-serif;
+  font-family: sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
-
-.navbar-text {
-  color: var(--main-1-c-274-c, #1C274C);
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
+} 
 
 .webbot-sidebar-item-current {
   border-radius: 4px;
