@@ -56,7 +56,7 @@ export default function AI_Image() {
             <div className='hidden lg:block'>
                 <Sidebar />
             </div>
-            <div className="flex flex-col mt-6 px-6 w-full lg:ml-16 lg:mr-16">
+            <div className="flex flex-col mt-6 px-6 w-full xl:mr-96 lg:ml-16 lg:mr-16">
                 <h1 className='ai-image-gen mb-2 '>AI Image Generator</h1>
                 <div className="flex flex-col">
                     <p className='ai-image-description mb-8 hidden lg:block'>Enter a text description and generate an AI Image</p>
