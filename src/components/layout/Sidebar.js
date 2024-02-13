@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Sidebar() {
     return (
-            <div className="w-[300px] hidden: sm:flex flex-col " style={{ borderRight: '1px solid rgb(235, 235, 235)' }}>
+            <div className="w-[300px] hidden sm:flex flex-col " style={{ borderRight: '1px solid rgb(235, 235, 235)' }}>
                     <div className="flex flex-col text-left mt-4 mx-6">
                         <p className="sidebar-description">THIS APPLICATION</p>
                         <Link 

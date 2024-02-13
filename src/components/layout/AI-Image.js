@@ -52,13 +52,13 @@ export default function AI_Image() {
     
 
     return (
-        <div className=" w-full" >
+        <div className="flex w-full" >
             <div className='hidden sm:block'>
                 <Sidebar />
             </div>
-            <div className="flex flex-col mt-6 px-6 sm:px-28">
+            <div className="flex flex-col mt-6 px-6 w-full sm:px-28 sm:mr-80">
                 <h1 className='ai-image-gen mb-2 '>AI Image Generator</h1>
-                <div className="flex flex-col ">
+                <div className="flex flex-col">
                     <p className='ai-image-description mb-8 hidden sm:block'>Enter a text description and generate an AI Image</p>
                     <form onSubmit={generateImage} className="hidden sm:flex border rounded-md border-gray-300 flex-grow items-center px-4">
                         <textarea
@@ -96,7 +96,7 @@ export default function AI_Image() {
                         ) : (
                             <button
                             type="button"
-                            className="clone-bot-btn w-full "
+                            className="clone-bot-btn w-full"
                             onClick={generateImage}
                             >
                             Generate
@@ -135,11 +135,11 @@ export default function AI_Image() {
                         </Link>
                         in Bind
                     </div>
-                    {/* <div className='block sm:hidden disable-text'>
-                        Always check its answers. 
+                    <div className='block sm:hidden disable-text'>
+                        {/* Always check its answers. 
                         <Link href={'/'} className='privacy'>privacy</Link>
-                        in Bind
-                    </div> */}
+                        in Bind */}
+                    </div>
                 </div>
             </div>
         </div>
