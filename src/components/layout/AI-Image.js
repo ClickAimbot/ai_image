@@ -106,9 +106,9 @@ export default function AI_Image() {
                     </div>
                 </div>
                 {generatedImage && ( // Check if generatedImage has a value
-                    <div className="flex flex-col flex-grow bg-white border rounded-lg border-gray-300 mt-6 ">
+                    <div className="flex flex-col flex-grow bg-white border rounded-md border-gray-300 mt-6 ">
                         {/* Display the generated image */}
-                        <Image src={generatedImage} alt="Generated" width={'600'} height={'400'} className="py-2 mt-4 px-24" />
+                        <Image src={generatedImage} alt="Generated" width={'600'} height={'400'} className="py-2 mt-4 px-4 sm:px-24" />
                         <div className="flex justify-center">
                             {/* Download link */}
                             <Link href={generatedImage} download='generated_image.png' className="border border-gray-300 py-2 px-12 mb-2">
@@ -118,11 +118,11 @@ export default function AI_Image() {
                     </div>
                 )}
                 {generatedImage && (
-                    <p className="ai-image-description mt-2 mb-16">{`Generated image is a ${inputText}`}</p>
+                    <p className="ai-image-description hidden sm:block mt-2 mb-16">{`Generated image is a ${inputText}`}</p>
                 )}
                 <div className="flex justify-between gap-2 mt-2 items-center">
                     <Link 
-                        className="hidden lg:flex flex-grow description" 
+                        className="flex lg:flex flex-grow description" 
                         href={'https://www.getbind.co/?utm_source=chat-app-bottom&utm_medium=chat-bot&utm_campaign=chat-bot'}
                     >
                         <span className='sidebar-how-text-hover px-1'>Created with </span>
