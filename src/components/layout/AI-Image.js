@@ -11,7 +11,8 @@ export default function AI_Image() {
     const [generatedImage, setGeneratedImage] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    const generateImage = async () => {
+    const generateImage = async (e) => {
+        e.preventDefault();
         setIsLoading(true);
     
         const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
@@ -105,7 +106,7 @@ export default function AI_Image() {
                     </div>
                 </div>
                 {generatedImage && ( // Check if generatedImage has a value
-                    <div className="flex flex-col flex-grow bg-white border rounded-lg border-gray-300 mt-6 mr-20">
+                    <div className="flex flex-col flex-grow bg-white border rounded-lg border-gray-300 mt-6 ">
                         {/* Display the generated image */}
                         <Image src={generatedImage} alt="Generated" width={'600'} height={'400'} className="py-2 mt-4 px-24" />
                         <div className="flex justify-center">
