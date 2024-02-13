@@ -23,15 +23,15 @@ export default function Navbar() {
                 <div className='web-chat-default-text'>AI Image Generator</div>
                 <div className='flex-1'></div>
 
-                <div className={`hidden sm:block ${isMobileMenuOpen ? 'hidden' : ''}`}>
+                <div className={`hidden lg:block ${isMobileMenuOpen ? 'hidden' : ''}`}>
                     <Link 
                         className="web-chat-default-text mr-5" 
-                        href={'https://app.getbind.co/register?utm_source=bind-image-generator&utm_medium=web&utm_campaign=bind-image-generator'} 
+                        href={'https://app.getbind.co/register?utm_source=bind-image-generator&utm_medium=web&utm_campaign=image-gen-create-bot'} 
                         target='_blank'
-                    >Create your own app</Link>
+                    >Create your own bot</Link>
                     <Link 
                         className='mr-5 clone-bot-btn' 
-                        href={'https://app.getbind.co/register?utm_source=bind-image-generator&utm_medium=web&utm_campaign=bind-image-generator'} 
+                        href={'https://app.getbind.co/register?utm_source=bind-image-generator&utm_medium=web&utm_campaign=image-gen-clone-bot'} 
                         target='_blank'
                     >Clone this bot</Link>
                 </div>
@@ -46,18 +46,29 @@ export default function Navbar() {
 
                 {/* Mobile Menu - shown/hidden based on isMobileMenuOpen */}
                 {isMobileMenuOpen && (
-                    <div className="">
-                        {/* Mobile menu content here */}
-                        <Link 
-                            className="web-chat-default-text" 
-                            href={'https://app.getbind.co/register?utm_source=bind-image-generator&utm_medium=web&utm_campaign=bind-image-generator'} 
-                            target='_blank'
-                        >Create your own app</Link>
-                        <Link 
-                            className='clone-bot-btn' 
-                            href={'https://app.getbind.co/register?utm_source=bind-image-generator&utm_medium=web&utm_campaign=bind-image-generator'} 
-                            target='_blank'
-                        >Clone this bot</Link>
+                    <div className="mobile-menu">
+                        <ul className="flex flex-col items-center border-t border-b">
+                            <li>
+                                <Link 
+                                    className="web-chat-default-text" 
+                                    href={'https://app.getbind.co/register?utm_source=bind-image-generator&utm_medium=web&utm_campaign=bind-image-generator'} 
+                                    target='_blank'
+                                    onClick={toggleMobileMenu}
+                                >
+                                    Create your own app
+                                </Link>
+                            </li>
+                            <li>
+                                <Link 
+                                    className='clone-bot-btn' 
+                                    href={'https://app.getbind.co/register?utm_source=bind-image-generator&utm_medium=web&utm_campaign=bind-image-generator'} 
+                                    target='_blank'
+                                    onClick={toggleMobileMenu}
+                                >
+                                    Clone this bot
+                                </Link>
+                            </li>
+                        </ul>
                     </div>
                 )}
             </div>

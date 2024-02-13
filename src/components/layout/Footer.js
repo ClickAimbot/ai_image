@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <div className='mt-4 hidden sm:block'>
+        <div className='mt-4 hidden lg:block'>
             <div className="w-[300px] flex flex-col py-2 mt-8">
                 <Link 
                     href={'/createAI'} 

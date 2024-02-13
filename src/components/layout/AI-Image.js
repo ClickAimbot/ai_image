@@ -53,14 +53,14 @@ export default function AI_Image() {
 
     return (
         <div className="flex w-full" >
-            <div className='hidden sm:block'>
+            <div className='hidden lg:block'>
                 <Sidebar />
             </div>
-            <div className="flex flex-col mt-6 px-6 w-full sm:px-28 sm:mr-80">
+            <div className="flex flex-col mt-6 px-6 w-full lg:ml-16 lg:mr-16">
                 <h1 className='ai-image-gen mb-2 '>AI Image Generator</h1>
                 <div className="flex flex-col">
-                    <p className='ai-image-description mb-8 hidden sm:block'>Enter a text description and generate an AI Image</p>
-                    <form onSubmit={generateImage} className="hidden sm:flex border rounded-md border-gray-300 flex-grow items-center px-4">
+                    <p className='ai-image-description mb-8 hidden lg:block'>Enter a text description and generate an AI Image</p>
+                    <form onSubmit={generateImage} className="hidden lg:flex border rounded-md border-gray-300 flex-grow items-center px-4">
                         <textarea
                         rows='4'
                         className="web-chat-default-text w-full outline-none resize-none p-2"
@@ -80,7 +80,7 @@ export default function AI_Image() {
                     </form>
 
                     {/* Textarea only for mobile */}
-                    <div className="sm:hidden border rounded-md border-gray-300 flex-grow px-4">
+                    <div className="lg:hidden border rounded-md border-gray-300 flex-grow px-4">
                         <textarea
                         rows='4'
                         className="web-chat-default-text w-full outline-none resize-none p-2"
@@ -90,7 +90,7 @@ export default function AI_Image() {
                     </div>
 
                     {/* Generate Button - Separate from textarea on mobile */}
-                    <div className="mt-2 sm:hidden">
+                    <div className="mt-2 lg:hidden">
                         {isLoading ? (
                             <p>Generating...</p>
                         ) : (
@@ -105,7 +105,7 @@ export default function AI_Image() {
                     </div>
                 </div>
                 {generatedImage && ( // Check if generatedImage has a value
-                    <div className="flex flex-col flex-grow bg-white border rounded-sm border-gray-300 mt-6 mr-20">
+                    <div className="flex flex-col flex-grow bg-white border rounded-lg border-gray-300 mt-6 mr-20">
                         {/* Display the generated image */}
                         <Image src={generatedImage} alt="Generated" width={'600'} height={'400'} className="py-2 mt-4 px-24" />
                         <div className="flex justify-center">
@@ -121,21 +121,21 @@ export default function AI_Image() {
                 )}
                 <div className="flex justify-between gap-2 mt-2 items-center">
                     <Link 
-                        className="flex flex-grow description" 
+                        className="hidden lg:flex flex-grow description" 
                         href={'https://www.getbind.co/?utm_source=chat-app-bottom&utm_medium=chat-bot&utm_campaign=chat-bot'}
                     >
                         <span className='sidebar-how-text-hover px-1'>Created with </span>
-                        <Image src="/logo-black.svg" alt='img' width={40} height={15} />
+                        <Image src="/logo-black.svg" alt='img' width={40} height={15} className='object-contain'/>
                     </Link>
                     <div className='flex-1'></div>
-                    <div className='description hidden sm:block disable-text'>
+                    <div className='description hidden lg:block disable-text'>
                         Bind can provide inaccurate information, including about people. Always double-check its answers. Your 
                         <Link href={''}>
                             <span className='privacy mx-1 sidebar-how-text-hover'>privacy</span>
                         </Link>
                         in Bind
                     </div>
-                    <div className='block sm:hidden disable-text'>
+                    <div className='block lg:hidden disable-text'>
                         {/* Always check its answers. 
                         <Link href={'/'} className='privacy'>privacy</Link>
                         in Bind */}
