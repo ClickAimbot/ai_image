@@ -108,7 +108,7 @@ export default function AI_Image() {
                 {generatedImage && ( // Check if generatedImage has a value
                     <div className="flex flex-col flex-grow bg-white border rounded-md border-gray-300 mt-6 ">
                         {/* Display the generated image */}
-                        <Image src={generatedImage} alt="Generated" width={'600'} height={'400'} className="py-2 mt-4 px-4 sm:px-24" />
+                        <Image src={generatedImage} alt="Generated" width={'600'} height={'400'} className="py-2 mt-2 px-4 sm:px-24" />
                         <div className="flex justify-center">
                             {/* Download link */}
                             <Link href={generatedImage} download='generated_image.png' className="border border-gray-300 py-2 px-12 mb-2">
