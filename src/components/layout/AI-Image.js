@@ -5,7 +5,6 @@ import { useState } from "react";
 import Sidebar from "./Sidebar";
 
 export default function AI_Image() {
-    const defaultImage = "https://via.placeholder.com/600x400.png?text=AI+Generated+Image";
 
     const [inputText, setInputText] = useState('');
     const [generatedImage, setGeneratedImage] = useState(null);
@@ -15,8 +14,8 @@ export default function AI_Image() {
         e.preventDefault();
         setIsLoading(true);
     
-        const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
-        const apiEndpoint = process.env.NEXT_PUBLIC_OPENAI_ENDPOINT;
+        const apiKey = process.env.OPENAI_API_KEY;
+        const apiEndpoint = process.env.OPENAI_ENDPOINT;
     
         try {
             const response = await fetch(apiEndpoint, {
