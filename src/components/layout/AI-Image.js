@@ -14,8 +14,8 @@ export default function AI_Image() {
         e.preventDefault();
         setIsLoading(true);
     
-        const apiKey = process.env.OPENAI_API_KEY;
-        const apiEndpoint = process.env.OPENAI_ENDPOINT;
+        const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
+        const apiEndpoint = process.env.NEXT_PUBLIC_OPENAI_ENDPOINT;
     
         try {
             const response = await fetch(apiEndpoint, {
