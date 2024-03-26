@@ -13,30 +13,10 @@ export default function AI_Image() {
     const generateImage = async (e) => {
         e.preventDefault();
         setIsLoading(true);
-
-        const apiKey = process.env.OPENAI_API_KEY;
-        const apiEndpoint = process.env.OPENAI_ENDPOINT;
-
-        const options = {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${apiKey}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                model: 'dall-e-3',
-                prompt: inputText,
-                n: 1,
-                size: '1024x1024',
-            }),
-            
-        }
     
         try {
-            const response = await fetch(apiEndpoint, options);
-            const data = await response.json();
-            
-            setGeneratedImage(data.data[0].url);
+            const response = await fetch('/api/route.js');
+            setGeneratedImage(response);
         } catch (error) {
             console.error('Error generating image:', error);
         } finally {
