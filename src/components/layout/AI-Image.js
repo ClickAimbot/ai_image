@@ -13,35 +13,29 @@ export default function AI_Image() {
     const generateImage = async (e) => {
         e.preventDefault();
         setIsLoading(true);
-    
-        const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
-        const apiEndpoint = process.env.NEXT_PUBLIC_OPENAI_ENDPOINT;
+
+        const apiKey = process.env.OPENAI_API_KEY;
+        const apiEndpoint = process.env.OPENAI_ENDPOINT;
+
+        const options = {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${apiKey}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                model: 'dall-e-3',
+                prompt: inputText,
+                n: 1,
+                size: '1024x1024',
+            }),
+            
+        }
     
         try {
-            const response = await fetch(apiEndpoint, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`,
-                },
-                body: JSON.stringify({
-                    model: 'dall-e-3',
-                    prompt: inputText,
-                    n: 1,
-                    size: '1024x1024',
-                }),
-            });
-    
-            if (!response.ok) {
-                // Handle 429 Too Many Requests specifically
-                if (response.status === 429) {
-                    console.error('Error: Too many requests. Please wait and try again.');
-                } else {
-                    throw new Error('Failed to generate image');
-                }
-            }
-    
+            const response = await fetch(apiEndpoint, options);
             const data = await response.json();
+            
             setGeneratedImage(data.data[0].url);
         } catch (error) {
             console.error('Error generating image:', error);
